@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+
+{% block title %}Учебная доска{% endblock %}
+
+{% block content %}
+<!-- Модальное окно альфа-версии -->
+ <div id="modal-alpha" class="modal">
+    <div class="modal-content">
+      <h4>Приносим извинения</h4>
+      <p>...но эта функция находится в разработке и будет добавлена позже.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Закрыть</a>
+    </div>
+  </div>
+
+<!-- Новости и профиль -->
+<div class="row">
+  <!--  Новости-->
+  <div class="col s6">
+    <div class="card medium">
+      <div class="slider" id="news-slider">
+        <ul class="slides white" id="news-slide">
+          <li class="news-slide">
+            <img>
+            <div class="caption center-align">
+            <!-- ! Попробовать flow-text -->
+              <p class="flow-text"><h3 class="grey-text text-darken-3">Найден телефон!</h3>
+              <h5 class="light grey-text text-darken-1">На кафедре лежит утерянный iPhone 15G.</h5></p>
+            </div>
+          </li>
+          <li>
+            <img class="news-pic" src="/static/img/news/1.jpg">
+            <div class="caption center-align">
+              <h3 class="news-title">Новость с изображением</h3>
+              <h5 class="flow-text light grey-text text-lighten-3">Текст новости</h5>
+            </div>
+          </li>
+<!--
+          <li>
+            <img src="http://lorempixel.com/580/250/nature/3">
+            <div class="caption right-align">
+              <h3>Новость с изображением</h3>
+              <h5 class="light grey-text text-lighten-3">Текст новости</h5>
+            </div>
+          </li>
+          <li>
+            <img src="http://lorempixel.com/580/250/nature/4">
+            <div class="caption center-align">
+              <h3>This is our big Tagline!</h3>
+              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </div>
+          </li>
+-->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--  Профиль-->
+  <div class="col s6">
+    <div class="card medium">
+      <div class="content"><div class="card-content">
+        <div class="row">
+          <div class="col s8">
+            <span class="card-title">Гость</span>
+            <p>Выполните вход для доступа ко всем возможностям.</p>
+<!--
+            <div class="chip ">
+              <img src="assets/img/guest.png" alt="">
+              Гости
+            </div>
+-->
+          </div>
+          <div class="col s4">
+            <img class="circle responsive-img right" src="/static/img/auth/guest.png" id="profile-pic"></div>
+          </div>
+          <div class="section"><div class="collection">
+            <a href="#modal-alpha" class="collection-item active modal-trigger">Мои работы</a>
+            <a href="#modal-alpha" class="collection-item modal-trigger">Мои преподаватели</a>
+            <a href="#modal-alpha" class="collection-item modal-trigger">Мои предметы</a>
+            <a href="#modal-alpha" class="collection-item modal-trigger">Настройки</a>
+          </div></div>
+      </div></div>
+    </div>
+  </div>
+</div>
+  
+<!-- Преподаватели -->
+<div class="row">
+  <div class="col s12">
+    <div class="card small">
+      <div class="content"><div class="card-content">
+        <span class="card-title">
+          {% if lecturers %}
+            <h5>Преподаватели</h5>
+          {% else %}
+            <h5>В базе ещё нет преподавателей</h5>
+          {% endif %}
+        </span> 
+        <div class="carousel" id="lecturer-carousel">
+          {% for lecturer in lecturers %}
+          <a class="lecturer-preview carousel-item modal-trigger" href="#lecturer-modal" lecturer-id="{{ lecturer.id }}">
+            <img class="circle responsive-img" src="{{ lecturer.img_url }}">
+            <h5 class="center-align">{{ lecturer.second_name }} {{ lecturer.first_name[0] }}. {{ lecturer.middle_name[0] }}.</h5></a>
+          {% endfor %}
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+<!--  Модальное окно для преподавателя-->
+<div id="lecturer-modal" class="modal modal-fixed-footer">
+ <div class="modal-content">
+  {# Здесь будут данные преподавателя #}
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Закрыть</a>
+    <a href="#modal-aplha" class="modal-action waves-effect waves-green btn-flat modal-trigger">Подробнее</a>
+  </div>
+</div>
+  
+<!-- Документы и учебная деятельность
+<div class="row">
+  <div class="col s6">
+    <div class="card small">
+      <div class="card-content large">
+        <span class="card-title"><h5>Преподаватели</h5></span>
+      </div>
+    </div>
+  </div>
+  <div class="col s6">
+    <div class="card small">
+      <div class="card-content">
+        <span class="card-title"><h5>Учебная деятельность</h5></span>
+      </div>
+    </div>
+  </div>
+</div>
+--> 
+  
+<!-- Предметы -->
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="content"><div class="card-content">
+        <span class="card-title"><h5>Предметы</h5></span>
+          <div class="container">
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header">
+                  <span class="discipline-logo col s1">В</span>Веб инжиниринг
+                </div>
+                <div class="collapsible-body"><p>Да, это всё одна большая лаба по этому предмету</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <span class="discipline-logo col s1">У</span>Управление данными
+                </div>
+                <div class="collapsible-body"><p>SELECT DESCRIPTION FROM BRAIN</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <span class="discipline-logo col s1">О</span>Операция системы
+                </div>
+                <div class="collapsible-body"><p>Здравствуйте, Сергей Игоревич</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <span class="discipline-logo col s1">И</span>Информационные технологии
+                </div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+              </li>
+            </ul>
+            <div class="center-align">
+              <a class="waves-effect waves-light btn modal-trigger" href="#modal-alpha"><i class="material-icons left">view_list</i>Все предметы</a>
+            </div>
+          </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<!-- "lecturers/{{ lecturer.second_name }} {{ lecturer.first_name[0] }}. {{ lecturer.middle_name[0] }}."  -->

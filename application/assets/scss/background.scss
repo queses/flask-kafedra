@@ -1,0 +1,43 @@
+$bgcolor: #42ddd4;
+$transparent: rgba(255, 255, 255, 0);
+
+$color-1: #20b2aa;
+$color-1-t: transparentize($color-1, 1);
+$color-2: #20b2aa;
+$color-2-t: transparentize($color-2, 1);
+
+$color-3: #24c8bf;
+$color-4: #2cd9d0;
+$color-5: #42ddd4;
+
+$size: 17rem;
+$big-size: $size*2.1;
+$min: $size*.16;
+$max: $size*.7;
+
+HTML {
+  height: 100%;
+  }
+BODY {
+  background: 
+    radial-gradient(circle at center,
+      $color-1 $min,
+      $color-2 $min, $color-2 $min*2,
+      $color-3 $min*2, $color-3 $min*3,
+      $color-4 $min*3, $color-4 $min*4,
+      $color-5 $min*4, $color-5 $min*5,
+      $transparent $min*5
+      ),
+    radial-gradient(circle at center,
+      $color-1 $min,
+      $color-2 $min, $color-2 $min*2,
+      $color-3 $min*2, $color-3 $min*3,
+      $color-4 $min*3, $color-4 $min*4,
+      $color-5 $min*4, $color-5 $min*5,
+      $transparent $min*5
+      ) $size $size
+    ;
+  background-size:  $big-size $big-size;
+  background-color: $bgcolor;
+  background-repeat: repeat;
+  }

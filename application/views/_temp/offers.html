@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+	Предложения
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="page-header change">
+			<h1>Предложения<br>
+				<small>
+					от которых вы не сможете отказаться
+				</small>
+			</h1>
+	</div>
+	{{ super() }}
+	<p>Эта страница выполнена с помощью наследования, и она дополняет блок содержания!</p>
+	<p>Между тем, предлагаем Вам ознакомиться с нашими предложениями:</p><br>
+	<div class="row">
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<img style="height: 200px" src="{{ url_for('static', filename = 'img/spy.jpg') }}" alt="...">
+				<div class="caption">
+					<h4>Слежка 24/7</h4>
+					<p>Лучшие специалисты всего мира круглые сутки трудятся ради того, чтобы все Ваши действия были видны, как на ладони! Однако, мы убедительно просим Вас не использовать бразуер Tor или подобное ПО - пожалуйста, не усложняйте нам работу.</p>
+					<p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">Больше</a></p>
+				</div>
+	  		</div>
+	  	</div>
+	  	<div class="col-sm-6 col-md-4">
+		<div class="thumbnail">
+		  <img style="height: 200px" src="{{ url_for('static', filename = 'img/guard.jpg') }}" alt="...">
+		  <div class="caption">
+			<h4>Безопасность включена</h4>
+			<p>Мы не просто так называемся Службой Безопасности. Все наши предложения включают в себя полный пакет Безопасноси&trade;, гарантирующий охрану Вашей жизни, если, конечно, вы не террорист или не находитесь в Федеральном Розыске.</p>
+			<p><a href="#" class="btn btn-primary" role="button"  data-toggle="modal" data-target="#myModal">Больше</a></p>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+		<div class="thumbnail">
+			<img style="height: 200px" src="{{ url_for('static', filename = 'img/free.jpg') }}" alt="...">
+			<div class="caption">
+				<h4>Бесплатно!</h4>
+				<p>Все вышеперечисленные опции абсолютно бесплатны, и более того - вы просто не можете от них отказаться! То есть, в прямом смысле. Не можете. И лучше даже не пытайтесь.<br><br><br></p>
+				<p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">Больше</a></p>
+			</div>
+		</div>
+	  </div>
+	</div>
+</div>
+
+<!-- Модальное окно 1 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h4 class="modal-title" id="myModalLabel">Слежка 24/7</h4>
+	  </div>
+	  <div class="modal-body">
+	  <p>Лучшие специалисты всего мира круглые сутки трудятся ради того, чтобы все Ваши действия были видны, как на ладони! Однако, мы убедительно просим Вас не использовать бразуер Tor или подобное ПО - пожалуйста, не усложняйте нам работу.</p>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+	  </div>
+	</div>
+  </div>
+</div>
+
+<!-- Модальное окно 2 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h4 class="modal-title" id="myModalLabel">Безопасность включена</h4>
+	  </div>
+	  <div class="modal-body">
+		<p>Мы не просто так называемся Службой Безопасности. Все наши предложения включают в себя полный пакет Безопасноси&trade;, гарантирующий охрану Вашей жизни, если, конечно, вы не террорист или не находитесь в Федеральном Розыске.</p>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+	  </div>
+	</div>
+  </div>
+</div>
+
+<!-- Модальное окно 3 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h4 class="modal-title" id="myModalLabel">Бесплатно!</h4>
+	  </div>
+	  <div class="modal-body">
+	  <p>Все вышеперечисленные опции абсолютно бесплатны, и более того - вы просто не можете от них отказаться! То есть, в прямом смысле. Не можете. И лучше даже не пытайтесь.</p>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+	  </div>
+	</div>
+  </div>
+</div>
+
+</div>
+{% endblock %}

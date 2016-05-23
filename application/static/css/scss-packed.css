@@ -1,0 +1,89 @@
+/* line 18 */
+HTML {
+  height: 100%;
+}
+
+/* line 21 */
+BODY {
+  background: radial-gradient(circle at center, #20b2aa 2.72rem, #20b2aa 2.72rem, #20b2aa 5.44rem, #24c8bf 5.44rem, #24c8bf 8.16rem, #2cd9d0 8.16rem, #2cd9d0 10.88rem, #42ddd4 10.88rem, #42ddd4 13.6rem, rgba(255, 255, 255, 0) 13.6rem), radial-gradient(circle at center, #20b2aa 2.72rem, #20b2aa 2.72rem, #20b2aa 5.44rem, #24c8bf 5.44rem, #24c8bf 8.16rem, #2cd9d0 8.16rem, #2cd9d0 10.88rem, #42ddd4 10.88rem, #42ddd4 13.6rem, rgba(255, 255, 255, 0) 13.6rem) 17rem 17rem;
+  background-size: 35.7rem 35.7rem;
+  background-color: #42ddd4;
+  background-repeat: repeat;
+}
+
+/* line 1 */
+body {
+  color: #2A3132;
+}
+
+/* line 5 */
+#kafedra-icon {
+  font-size: 8ex;
+}
+
+/* line 9 */
+.slider {
+  padding-top: 5px;
+}
+
+/* line 13 */
+.news-pic {
+  margin-top: 50px;
+}
+
+/*
+  #news-slider {
+    margin-top: 20px !important;
+  }
+
+  .news-slide {
+    bottom: 100px !important;
+    color: red !important;
+    border-radius: 10px ;
+  }
+*/
+/* line 29 */
+.news-title {
+  font-size: 200%;
+}
+
+/* line 33 */
+#header {
+  background-color: #336B87 !important;
+}
+
+/* line 37 */
+#lecturer-carousel {
+  top: -9em;
+}
+
+/* line 41 */
+.lecturer-photo {
+  width: 20vw;
+}
+
+/* line 45 */
+#profile-pic {
+  /*  margin-top: 2em;*/
+  width: 7em;
+  float: left;
+}
+
+/* line 51 */
+.g-margin {
+  margin-top: 100px;
+}
+
+/* line 55 */
+.discipline-logo {
+  color: #26A69A !important;
+  font-weight: 600;
+  /*margin-left: 1em;*/
+  /*margin-right: 2em;*/
+}
+
+/*
+.card {
+    background-color: #eeeeee !important;
+}
+*/

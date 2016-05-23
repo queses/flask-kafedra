@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+	<title>{% block title %}{% endblock %} - Кафедра ИВТ</title>
+
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"> -->
+	<!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> -->
+
+  <!--Import Materialize-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/static/lib/materialize/css/materialize.min.css"  media="screen,projection">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8">
+
+	{% assets "scss_all" %}
+		<link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+	{% endassets %}
+</head>
+<body>
+	<span id="main_header">
+		{% block main_header %}
+			{% include "main_header.html" %}
+		{% endblock %}
+	</span>
+	<span id="content"><div class="container">
+			{% block content %}
+			{% endblock %}
+	</div></span>
+	<span id="main_footer"><div class="container">
+		{% block main_footer %}
+			{% include "main_footer.html" %}
+		{% endblock %}
+	</div></span>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/lib/materialize/js/materialize.min.js"></script>
+	<script src="{{ url_for('static', filename='js/loadingoverlay.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/board.js') }}"></script>
+	{% assets "coffee_all" %}
+		<script src="{{ ASSET_URL }}"></script>
+	{% endassets %}
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script> -->
+</body>
+</html>

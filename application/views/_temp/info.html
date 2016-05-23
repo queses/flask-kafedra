@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block page_title %}О нас{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<div class="page-header change">
+		<h1>О нас<br>
+			<small>
+				славной и доблестной Государственной Службе Безопасности
+			</small>
+		</h1>
+	</div>	
+	<div id="infoMap">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.372776168391!2d37.615310714935056!3d55.752026299520644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JzQvtGB0LrQvtCy0YHQutC40Lkg0JrRgNC10LzQu9GM!5e0!3m2!1sru!2sru!4v1445791930067" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+	<span id="contentText">
+		<address>
+			<strong>Об этой странице:</strong><br>
+			Сделана с помощью наследования<br>
+			Переопределяет подвал
+		</address>
+
+		<address>
+  			<strong><abbr title="Государственная Служба Безопасности">ГСБ</abbr>:</strong><br>
+  			Каждый дом, каждый город<br>
+  			Каждая область, каждый округ<br>
+  			<abbr title="Обычно мы сами с Вами связываемся.">8 (800) 555-35-35</abbr>
+</address>
+
+<address>
+  <strong>Связь:</strong><br>
+  <a href="mailto:kgbfan@gsb.ru">kgbfan@gsb.ru</a>
+  <small>(Владимир Виссарионович)</small>
+</address>
+
+<address>
+  <strong>Дизайн студии:</strong><br>
+  <a href="http://getbootstrap.com">Laboratorka Designs</a>
+</address>
+
+	</span>
+</div>
+{% endblock %}
+
+{% block main_footer %}
+	<div class="container">
+	<strong>Все названия и адреса являются вымышленными, любое совпадение с реальностью случайно.</strong>
+	</div>
+{% endblock %}
